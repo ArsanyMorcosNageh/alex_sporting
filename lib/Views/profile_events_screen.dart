@@ -54,39 +54,44 @@ class _EventsState extends State<Events> {
         SizedBox(
           height: MediaQuery.of(context).size.height * .1,
         ),
-        Wrap(
-          alignment: WrapAlignment.end,
-          children: widget.events.map((e) {
-            return GestureDetector(
-              onTap: () {
-                widget.changeStatus(e);
-                setState(() {});
-              },
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 10),
-                decoration: BoxDecoration(
-                  color: e.selected ? Colors.green : Colors.grey.shade100,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: const Offset(0, 3),
-                      color: Colors.grey.shade300,
-                      spreadRadius: 3,
-                      blurRadius: 5,
+        SizedBox(
+          height: MediaQuery.of(context).size.height * .5,
+          child: SingleChildScrollView(
+            child: Wrap(
+              alignment: WrapAlignment.end,
+              children: widget.events.map((e) {
+                return GestureDetector(
+                  onTap: () {
+                    widget.changeStatus(e);
+                    setState(() {});
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: e.selected ? Colors.green : Colors.grey.shade100,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: const Offset(0, 3),
+                          color: Colors.grey.shade300,
+                          spreadRadius: 3,
+                          blurRadius: 5,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                child: IntrinsicWidth(
-                  child: Text(
-                    e.title,
-                    style: TextStyle(
-                        color: e.selected ? Colors.white : Colors.grey),
+                    child: IntrinsicWidth(
+                      child: Text(
+                        e.title,
+                        style: TextStyle(
+                            color: e.selected ? Colors.white : Colors.grey),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            );
-          }).toList(),
+                );
+              }).toList(),
+            ),
+          ),
         ),
       ],
     );
