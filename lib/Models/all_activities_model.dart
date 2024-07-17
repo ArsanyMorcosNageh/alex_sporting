@@ -4,10 +4,10 @@ import 'package:alex_sporting/Models/teamsresults_model.dart';
 import 'package:alex_sporting/Models/trips_model.dart';
 
 class AllActivitiesModel {
-  final List<EventsModel> events;
-  final List<PreferablesModel> preferables;
-  final List<TeamsResultsModel> teamsResults;
-  final List<TripsModel> trips;
+  List<EventsModel> events;
+  List<PreferablesModel> preferables;
+  List<TeamsResultsModel> teamsResults;
+  List<TripsModel> trips;
 
   AllActivitiesModel(
       {required this.events,
@@ -16,14 +16,6 @@ class AllActivitiesModel {
       required this.trips});
 
   factory AllActivitiesModel.fromjson(Map<String, dynamic> json) {
-    // List<EventsModel> allEvents = [];
-    // List ev = json['events'];
-    // for (int i = 0; i < ev.length; i++) {
-    //   allEvents.add(EventsModel.fromjson(ev[i]));
-    // }
-
-
-
     return AllActivitiesModel(
       events: List<EventsModel>.from(json['events'].map((event) {
         return EventsModel.fromjson(event);

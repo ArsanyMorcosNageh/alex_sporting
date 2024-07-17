@@ -1,4 +1,4 @@
-import 'package:alex_sporting/Views/homepage.dart';
+import 'package:alex_sporting/Views/edit_interests_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter PageView Example',
-      home: MyHomePage(),
+      home: EditInterestsScreen(),
     );
   }
 }

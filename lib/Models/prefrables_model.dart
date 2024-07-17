@@ -3,7 +3,7 @@ import 'package:alex_sporting/Models/subcategories_model.dart';
 class PreferablesModel {
   final String id;
   final String title;
-  final List<SubCategoriesModel> subcategories;
+  List<SubCategoriesModel> subcategories;
 
   PreferablesModel(
       {required this.id, required this.title, required this.subcategories});
